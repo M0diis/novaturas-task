@@ -44,54 +44,52 @@ $airport = getAirport($mysqli, $id);
             map.on('click', onMapClick);
         })();
     </script>
-
-    
         <div class="col-xl-12 grid-margin">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">NAUJAS ORO UOSTAS</h5>
-
-						<form action="/avialinija/airport_handler.php" method="post" autocomplete="off">
-							<fieldset>
-                                <div class="form-control-sm">
-									<label class="field" for="country_iso" style="font-weight: bold">Šalis</label>
-                                    <br>
-                                    <p>Pasirinkite naujo oro uosto šalį.</p>
-                                    <select id="country_iso" name="country_iso" class="form-control">
-                                    <?php 
-                                        $res = $mysqli->query("SELECT * FROM `countries`");
+                    <form action="/avialinija/airport_handler.php" method="post" autocomplete="off">
+                        <fieldset>
+                            <div class="form-control-sm">
+                                <label class="field" for="country_iso" style="font-weight: bold">Šalis</label>
+                                <br>
+                                <p>Pasirinkite naujo oro uosto šalį.</p>
+                                <select id="country_iso" name="country_iso" class="form-control">
+                                <?php 
+                                    $res = $mysqli->query("SELECT * FROM `countries`");
+                        
+                                    while($row = $res->fetch_assoc())
+                                    {
+                                        echo '<option value="'.$row['iso'].'">'.$row['name'].'</option>';
+                                    }
+                                ?>
+                                </select>
+                            </div>
+                        
+                            <div class="form-control-sm">
+                                <label class="field" for="lat" style="font-weight: bold">Ilguma</label>
+                                <p>Nurodykite ilgumą spausdami ant žemėlapio arba įrašydami į laukelį.</p>
+                                <input type="text" id="lat" name="lat" class="form-control">
+                            </div>
                             
-                                        while($row = $res->fetch_assoc())
-                                        {
-                                            echo '<option value="'.$row['iso'].'">'.$row['name'].'</option>';
-                                        }
-                                    ?>
-                                    </select>
-                                </div>
-							
-								<div class="form-control-sm">
-									<label class="field" for="lat" style="font-weight: bold">Ilguma</label>
-                                    <p>Nurodykite ilgumą spausdami ant žemėlapio arba įrašydami į laukelį.</p>
-									<input type="text" id="lat" name="lat" class="form-control">
-                                </div>
-								
-								<div class="form-control-sm">
-									<label class="field" for="lng" style="font-weight: bold">Platuma</label>
-                                    <p>Nurodykite platumą spausdami ant žemėlapio arba įrašydami į laukelį.</p>
-									<input type="text" id="lng" name="lng" class="form-control">
-                                </div>			
+                            <div class="form-control-sm">
+                                <label class="field" for="lng" style="font-weight: bold">Platuma</label>
+                                <p>Nurodykite platumą spausdami ant žemėlapio arba įrašydami į laukelį.</p>
+                                <input type="text" id="lng" name="lng" class="form-control">
+                            </div>			
 
-								<div class="form-control-sm">
-									<label class="field" for="address" style="font-weight: bold">Adresas</label>
-                                    <p>Nurodykite adresą spausdami ant žemėlapio.</p>
-									<input disabled type="text" id="address" name="address" class="form-control">
-                                </div>
-								
-							</fieldset>
+                            <div class="form-control-sm">
+                                <label class="field" for="address" style="font-weight: bold">Adresas</label>
+                                <p>Nurodykite adresą spausdami ant žemėlapio.</p>
+                                <input disabled type="text" id="address" name="address" class="form-control">
+                            </div>
 
-                            <button type="submit" name="create" class="btn btn-sm btn-success">Sukurti</button>
-						</form>
-
+                            <div class="form-control-sm">
+                                <button type="submit" name="create" class="btn btn-sm btn-success">Sukurti</button>
+                            </div>
+                        
+                        </fieldset>
+                    </form>
                 </div>
             </div>
         </div>

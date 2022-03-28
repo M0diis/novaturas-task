@@ -118,17 +118,17 @@ $airport = getAirport($mysqli, $id);
                         <fieldset>
                             <div class="form-control-sm">
                                 <label class="field" for="avline_name">Avialinijos pavadinimas</label>
-                                <input disabled type="text" id="avline_name" name="avline_name" class="form-control" value=<?= $airavl['avline_name'] ?>>
+                                <input disabled type="text" id="avline_name" name="avline_name" class="form-control" value="<?= $airavl['avline_name'] ?>">
                             </div>
 
                             <div class="form-control-sm">
                                 <label class="field" for="country_iso">Šalies kodas</label>
-                                <input disabled type="text" id="country_iso" name="country_iso" class="form-control" value=<?= $airavl['country_iso'] ?>>
+                                <input disabled type="text" id="country_iso" name="country_iso" class="form-control" value="<?= $airavl['country_iso'] ?>">
                             </div>
 
                             <div class="form-control-sm">
                                 <label class="field" for="country_name">Šalis</label>
-                                <input disabled type="text" id="country_name" name="country_name" class="form-control" value=<?= $airavl['country_name'] ?>>
+                                <input disabled type="text" id="country_name" name="country_name" class="form-control" value="<?= $airavl['country_name'] ?>">
                             </div>
                             
                             <input type="hidden" name="id" value="<?= $id ?>">

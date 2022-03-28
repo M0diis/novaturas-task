@@ -65,7 +65,7 @@ include(__DIR__."/cms/theme/navigation.php");
                                     <?= $avl['country_name'] ?>
                                 </td>
                                 <td>
-                                    <a href="avialine_edit.php?id=<?= $avl['avline_id'] ?>" target="_blank">
+                                    <a href="avline_edit.php?id=<?= $avl['avline_id'] ?>" target="_blank">
                                         <button type="button" class="btn btn-sm btn-primary">
                                             Redaguoti
                                         </button>
@@ -79,6 +79,13 @@ include(__DIR__."/cms/theme/navigation.php");
                         </tbody>
                         </table>
                     </div>
+
+                    <a href="avline_create.php" target="_blank">
+                        <button type="button" class="btn btn-sm btn-primary">
+                                Kurti naują
+                        </button>
+                    </a>
+
                 </div>
             </div>
         </div>

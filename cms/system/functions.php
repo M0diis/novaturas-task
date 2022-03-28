@@ -110,15 +110,27 @@ function getAvialines($mysqli, $airport_id = -1, $join = false)
     return getArray($result);
 }
 
+function getAvline($mysqli, $id)
+{
+    $query = "SELECT * FROM `avlines` WHERE `id` = $id";
+
+    $result = $mysqli->query($query);
+
+    if (!$result) {
+        echo "Error: " . $mysqli->error;
+        exit;
+    }
+
+    return $result->fetch_assoc();
+}
+
 function getAvlines($mysqli, $join = false)
 {
     $query;
 
     if($join) {
         $query = "SELECT `avlines`.`name` AS avline_name, `avlines`.`id` AS avline_id, `avlines`.`country_iso`, `countries`.`name` AS country_name
-              FROM `airports_avlines` 
-              LEFT JOIN `avlines` 
-                ON `airports_avlines`.`avline_id` = `avlines`.`id`
+              FROM `avlines`
               LEFT JOIN `countries`
                 ON `avlines`.`country_iso` = `countries`.`iso`";
     }

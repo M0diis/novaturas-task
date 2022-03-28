@@ -67,7 +67,7 @@ $airport = getAirport($mysqli, $id);
         <div class="col-xl-12 grid-margin">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">ORO UOSTAI</h5>
+                    <h5 class="card-title">ORO UOSTO REDAGAVIMAS</h5>
                     <form action="/avialinija/airport_handler.php" method="post" autocomplete="off">
                         <fieldset>
                             <div class="form-control-sm">

@@ -14,7 +14,7 @@ include(__DIR__."/cms/theme/navigation.php");
     <script type="text/javascript">
         (async() =>
         {
-            const map = await getMap(54.96779482, 24.07233345, 13);
+            const map = await getMap(54.96779482, 24.07233345, 11);
 
             <?php
             $airports = getAirports($mysqli, true);
